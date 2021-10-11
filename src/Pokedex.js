@@ -19,7 +19,9 @@ class Pokedex extends React.Component {
             return pokemons.map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />).find((_pok, i) => i === index)
         }
         
-        return pokemons.filter((pok) => pok.type === type).map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />).find((_pok, i) => i === index)
+        return pokemons.filter((pok) => pok.type === type)
+            .map((pokemon) => <Pokemon key={pokemon.id} pokemon={pokemon} />)
+            .find((_pok, i) => i === index)
     }
 
     nextPokemon = () => {
